@@ -41,10 +41,10 @@
 		    $dom = new DOMDocument('1.0');
 		    @$dom->loadHTMLFile($url);
 
-		    $name = 'Test';
+		    $name = 'NAME';
 		    $serving = 0;
 		    $vegetarian = 0;
-		    $ingredients = 'Marijuana, LSD, Cocaine';
+		    $ingredients = 'INGREDIENTS';
 		    $calories = 0;
 		    $fat = 0;
 		    $saturated = 0;
@@ -96,6 +96,34 @@
 		    				break;
 		    			case 8:
 		    				$protein = $cur;
+		    				break;
+		    		}
+		    		$i++;
+		    	}
+		    }
+
+		    //Get minerals
+		    $i = 0;
+		    $minerals = $dom->getElementsByClassName("minerals");
+		    foreach($minerals as $item) {
+		    	$cur = $item->nodeValue;
+		    	//Rip out + sign
+		    	str_replace('+', '', $cur);
+		    	$cur = max(-1, filter_var($item->nodeValue, FILTER_SANITIZE_NUMBER_INT));
+		    	echo $cur . "<br>";
+		    	if($cur){
+		    		switch($i) {
+		    			case 0:
+		    				$vitaminA = $cur;
+		    				break;
+		    			case 1:
+		    				$vitaminC = $cur;
+		    				break;
+		    			case 2:
+		    				$calcium = $cur;
+		    				break;
+		    			case 3:
+		    				$iron = $cur;
 		    				break;
 		    		}
 		    		$i++;
