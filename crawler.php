@@ -67,7 +67,7 @@
 		    	//Rip out + sign
 		    	str_replace('+', '', $cur);
 		    	$cur = max(-1, filter_var($item->nodeValue, FILTER_SANITIZE_NUMBER_INT));
-		    	echo $cur . "<br>";
+		    	//echo $cur . "<br>";
 		    	if($cur){
 		    		switch($i) {
 		    			case 0:
@@ -110,7 +110,7 @@
 		    	//Rip out + sign
 		    	str_replace('+', '', $cur);
 		    	$cur = max(-1, filter_var($item->nodeValue, FILTER_SANITIZE_NUMBER_INT));
-		    	echo $cur . "<br>";
+		    	//echo $cur . "<br>";
 		    	if($cur){
 		    		switch($i) {
 		    			case 0://fat %
@@ -149,8 +149,11 @@
 		    }
 
 		    //Name
-		    $name = $dom->getElementByTagName('h1')->nodeValue;
-		    str_replace('PRoduct Information: ', '', $name);
+		    $title = $dom->getElementsByTagName('h1');
+		    foreach($title as $item) {
+		    	echo $item->nodeValue . "<br>";
+		    }
+		    //str_replace('Product Information: ', '', $name);
 
 		    $sql = "INSERT INTO food (name, serving, vegetarian, ingredients, calories, fat, saturated, cholestrol, sodium, carbohydrate, fibre, sugars, protein, vitaminA, vitaminC, calcium, iron, id) VALUES ('$name', '$serving', '$vegetarian', '$ingredients', '$calories', '$fat', '$saturated', '$cholestrol', '$sodium', '$carbohydrate', '$fibre', '$sugars', '$protein', '$vitaminA', '$vitaminC', '$calcium', '$iron', '$id');";
 			echo "Querying DB with: " . $sql . "<br>";
