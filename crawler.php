@@ -148,6 +148,10 @@
 		    	}
 		    }
 
+		    //Name
+		    $name = $dom->getElementByTagName('h1')->nodeValue;
+		    str_replace('PRoduct Information: ', '', $name);
+
 		    $sql = "INSERT INTO food (name, serving, vegetarian, ingredients, calories, fat, saturated, cholestrol, sodium, carbohydrate, fibre, sugars, protein, vitaminA, vitaminC, calcium, iron, id) VALUES ('$name', '$serving', '$vegetarian', '$ingredients', '$calories', '$fat', '$saturated', '$cholestrol', '$sodium', '$carbohydrate', '$fibre', '$sugars', '$protein', '$vitaminA', '$vitaminC', '$calcium', '$iron', '$id');";
 			echo "Querying DB with: " . $sql . "<br>";
 			if($conn->query($sql) === TRUE) {
