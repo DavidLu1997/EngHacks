@@ -158,7 +158,7 @@
 		    $name = str_replace('Product Information: ', '', $name);
 
 		    //Vegetarian
-		    $vege = $don->getElementsByTagName('dd');
+		    $vege = $dom->getElementsByTagName('dd');
 		    foreach($title as $item) {
 		    	echo $item->nodeValue;
 		    	$vegetarian = $item->nodeValue;
