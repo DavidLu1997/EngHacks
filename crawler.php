@@ -104,7 +104,7 @@
 
 		    //Get minerals
 		    $i = 0;
-		    $minerals = $dom->getElementsByClassName("minerals");
+		    $minerals = $dom->getElementsByTagName('td');
 		    foreach($minerals as $item) {
 		    	$cur = $item->nodeValue;
 		    	//Rip out + sign
