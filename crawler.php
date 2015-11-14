@@ -114,17 +114,35 @@
 		    	if($cur){
 		    		switch($i) {
 		    			case 0:
+		    				$serving = $cur;
+		    				break;
+		    			case 1://fat %
+		    				
+		    				break;
+		    			case 2://sat %
+		    				
+		    				break;
+		    			case 3://sodium %
+		    				
+		    				break;
+		    			case 4://carb %
+		    				
+		    				break;
+		    			case 5://fibre %
+		    				
+		    				break;
+		    			case 6:
 		    				$vitaminA = $cur;
-		    				break;
-		    			case 1:
+		    			break;
+		    			case 7:
 		    				$vitaminC = $cur;
-		    				break;
-		    			case 2:
+		    			break;
+		    			case 8:
 		    				$calcium = $cur;
-		    				break;
-		    			case 3:
+		    			break;
+		    			case 9:
 		    				$iron = $cur;
-		    				break;
+		    			break;
 		    		}
 		    		$i++;
 		    	}
