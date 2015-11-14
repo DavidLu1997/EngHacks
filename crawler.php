@@ -21,8 +21,15 @@
 
 		//Clear DB
 		$clearDB = 1;
-		if($conn->query())
-
+		if($clearDB) {
+			if($conn->query("delete from food;") === TRUE){
+				echo "Table cleared. <br>";
+			}
+			else {
+				echo "Error: delete from food;" . "<br>" .$conn->error;
+			}
+		}
+		
 		//Min and Max IDs for foods
 		$min_id = 1000;
 		$max_id = 1001;
