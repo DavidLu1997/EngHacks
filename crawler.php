@@ -157,12 +157,23 @@
 		    }
 		    $name = str_replace('Product Information: ', '', $name);
 
-		    //Vegetarian
+		    //Vegetarian and ingredients
+		    $i = 0;
 		    $vege = $dom->getElementsByTagName('dd');
-		    foreach($title as $item) {
-		    	echo $item->nodeValue;
-		    	$vegetarian = $item->nodeValue;
-		    	break; //GHETTO
+		    foreach($vege as $item) {
+		    	//echo $item->nodeValue . "<br>";
+		    	switch($i){
+		    		case 0: //Serving size
+		    			
+		    			break;
+		    		case 1:
+		    			$vegetarian = $item->nodeValue;
+		    			break;
+		    		case 2:
+		    			$ingredients = $item->nodeValue;
+		    			break;
+		    	}
+		    	$i++;
 		    }
 		    $vegetarian = $vegetarian == "Vegetarian";
 
