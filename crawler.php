@@ -15,7 +15,7 @@
 
 		    $dom = new DOMDocument('1.0');
 		    @$dom->loadHTMLFile($url);
-		    echo "URL:",$url;
+		    echo "URL:". $url . " crawled.<br>";
 		}
 
 		for($x = $min_id; $x <= $max_id; $x++) {
