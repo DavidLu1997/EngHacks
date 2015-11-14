@@ -8,7 +8,7 @@
 	<?php
 		//Min and Max IDs for foods
 		$min_id = 1000;
-		$max_id = 1001;
+		$max_id = 1002;
 		function crawl_page($url)
 		{
 		    $seen[$url] = true;
