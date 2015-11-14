@@ -197,6 +197,10 @@
 		} else {
 				//echo "Error: " . $sql . "<br>" .$conn->error;
 		}
+
+		echo "Crawl complete, " . $max_id - $min_id + 1 . " entries crawled.<br>";
+		echo "Have a nice day!<br>";
+		echo "<img src='taylor-swift.jpg'>";
 	?>
 </body>
 
