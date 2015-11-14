@@ -29,7 +29,7 @@
 				echo "Error: delete from food;" . "<br>" .$conn->error;
 			}
 		}
-		
+
 		//Min and Max IDs for foods
 		$min_id = 1000;
 		$max_id = 1001;
@@ -60,7 +60,7 @@
 		    $iron = 35;
 
 		    //Get nutrition information from document
-		    $nutrition_info = $dom->getElementsByTagName('span');
+		    $nutrition_info = $dom->getElementsByTagName('th');
 		    foreach($nutrition_info as $item) {
 		    	echo $item->nodeValue . "<br>";
 		    }
