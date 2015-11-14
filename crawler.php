@@ -15,7 +15,7 @@
 
 		    $dom = new DOMDocument('1.0');
 		    @$dom->loadHTMLFile($url);
-		    echo "URL:",$url,PHP_EOL,"CONTENT:",PHP_EOL,$dom->saveHTML(),PHP_EOL,PHP_EOL;
+		    echo "URL:",$url;
 		}
 
 		for($x = $min_id; $x <= $max_id; $x++) {
