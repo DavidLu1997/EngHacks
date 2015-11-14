@@ -17,25 +17,25 @@
 		if($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 		}
-		echo "Connected suessfully.<br>";
+		//echo "Connected suessfully.<br>";
 
 		//Clear DB
 		$clearDB = 1;
 		if($clearDB) {
 			if($conn->query("delete from food;") === TRUE){
-				echo "Table cleared. <br>";
+				//echo "Table cleared. <br>";
 			}
 			else {
-				echo "Error: delete from food;" . "<br>" .$conn->error;
+				//echo "Error: delete from food;" . "<br>" .$conn->error;
 			}
 		}
 
 		//Min and Max IDs for foods
-		$min_id = 1000;
-		$max_id = 2711;
+		$min_id = 0;
+		$max_id = 10000;
 		function crawl_page($url, $id, $conn)
 		{
-			echo "Crawling: " . $url . "<br>";
+			//echo "Crawling: " . $url . "<br>";
 		    $seen[$url] = true;
 
 		    $dom = new DOMDocument('1.0');
@@ -180,14 +180,22 @@
 		    $sql = "INSERT INTO food (name, serving, vegetarian, ingredients, calories, fat, saturated, cholestrol, sodium, carbohydrate, fibre, sugars, protein, vitaminA, vitaminC, calcium, iron, id) VALUES ('$name', '$serving', '$vegetarian', '$ingredients', '$calories', '$fat', '$saturated', '$cholestrol', '$sodium', '$carbohydrate', '$fibre', '$sugars', '$protein', '$vitaminA', '$vitaminC', '$calcium', '$iron', '$id');";
 			//echo "Querying DB with: " . $sql . "<br>";
 			if($conn->query($sql) === TRUE) {
-				echo "Query sucessful, URL: ". $url . " crawled.<br>";
+				//echo "Query sucessful, URL: ". $url . " crawled.<br>";
 			} else {
-				echo "Error: " . $sql . "<br>" .$conn->error;
+				//echo "Error: " . $sql . "<br>" .$conn->error;
 			}
 		}
 
 		for($x = $min_id; $x <= $max_id; $x++) {
 			crawl_page("https://uwaterloo.ca/food-services/menu/product/" . $x, $x, $conn);
+		}
+
+		//Delete empty
+		$sql = "DELETE from food where name = 'NAME'";
+		if($conn->query($sql) === TRUE) {
+				//echo "Removed null entries.<br>";
+		} else {
+				//echo "Error: " . $sql . "<br>" .$conn->error;
 		}
 	?>
 </body>
