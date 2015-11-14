@@ -62,7 +62,7 @@
 		    //Get nutrition information from document
 		    $nutrition_info = $dom->getElementsByTagName('th');
 		    foreach($nutrition_info as $item) {
-		    	echo $item->nodeValue . "<br>";
+		    	echo intval($item->nodeValue) . "<br>";
 		    }
 
 		    $sql = "INSERT INTO food (name, serving, vegetarian, ingredients, calories, fat, saturated, cholestrol, sodium, carbohydrate, fibre, sugars, protein, vitaminA, vitaminC, calcium, iron, id) VALUES ('$name', '$serving', '$vegetarian', '$ingredients', '$calories', '$fat', '$saturated', '$cholestrol', '$sodium', '$carbohydrate', '$fibre', '$sugars', '$protein', '$vitaminA', '$vitaminC', '$calcium', '$iron', '$id');";
