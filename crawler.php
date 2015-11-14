@@ -60,9 +60,39 @@
 		    $iron = 35;
 
 		    //Get nutrition information from document
+		    $i = 0; //Ghetto counter
 		    $nutrition_info = $dom->getElementsByTagName('th');
 		    foreach($nutrition_info as $item) {
-		    	echo filter_var(($item->nodeValue, FILTER_SANITIZE_NUMBER_INT) . "<br>";
+		    	$cur = max(-1, filter_var($item->nodeValue, FILTER_SANITIZE_NUMBER_INT));
+		    	if($cur != -1){
+		    		switch($i) {
+		    			case 0:
+		    				$calories = $cur;
+		    				break;
+		    			case 1:
+		    				$fat = $cur;
+		    				break;
+		    			case 2:
+		    				$saturated = $cur;
+		    				break;
+		    			case 3:
+		    				$cholestrol = $cur;
+		    				break;
+		    			case 4:
+		    				$sodium = $cur;
+		    				break;
+		    			case 5:
+		    				$fibre = $cur;
+		    				break;
+		    			case 6:
+		    				$sugars = $cur;
+		    				break;
+		    			case 7:
+		    				$protein = $cur;
+		    				break;
+		    		}
+		    		$i++;
+		    	}
 		    }
 
 		    $sql = "INSERT INTO food (name, serving, vegetarian, ingredients, calories, fat, saturated, cholestrol, sodium, carbohydrate, fibre, sugars, protein, vitaminA, vitaminC, calcium, iron, id) VALUES ('$name', '$serving', '$vegetarian', '$ingredients', '$calories', '$fat', '$saturated', '$cholestrol', '$sodium', '$carbohydrate', '$fibre', '$sugars', '$protein', '$vitaminA', '$vitaminC', '$calcium', '$iron', '$id');";
