@@ -19,9 +19,13 @@
 		}
 		echo "Connected suessfully.<br>";
 
+		//Clear DB
+		$clearDB = 1;
+		if($conn->query())
+
 		//Min and Max IDs for foods
 		$min_id = 1000;
-		$max_id = 1002;
+		$max_id = 1000;
 		function crawl_page($url, $id, $conn)
 		{
 			echo "Crawling: " . $url . "<br>";
@@ -47,6 +51,12 @@
 		    $vitaminC = 42;
 		    $calcium = 11;
 		    $iron = 35;
+
+		    //Get nutrition information from document
+		    $nutrition_info = $dom->getElementsByTagName('span');
+		    foreach($nutrition_info as $item) {
+		    	echo $item->nodeValue . "<br>";
+		    }
 
 		    $sql = "INSERT INTO food (name, serving, vegetarian, ingredients, calories, fat, saturated, cholestrol, sodium, carbohydrate, fibre, sugars, protein, vitaminA, vitaminC, calcium, iron, id) VALUES ('$name', '$serving', '$vegetarian', '$ingredients', '$calories', '$fat', '$saturated', '$cholestrol', '$sodium', '$carbohydrate', '$fibre', '$sugars', '$protein', '$vitaminA', '$vitaminC', '$calcium', '$iron', '$id');";
 			echo "Querying DB with: " . $sql . "<br>";
