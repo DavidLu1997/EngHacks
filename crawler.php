@@ -21,9 +21,10 @@
 
 		//Min and Max IDs for foods
 		$min_id = 1000;
-		$max_id = 1001;
+		$max_id = 1002;
 		function crawl_page($url, $id)
 		{
+			echo "Crawling:" . $url . "<br>";
 		    $seen[$url] = true;
 
 		    $dom = new DOMDocument('1.0');
@@ -32,7 +33,7 @@
 		    $name = 'Test';
 		    $serving = 100;
 		    $vegetarian = 0;
-		    $ingredients = "Marijuana, LSD, Cocaine";
+		    $ingredients = 'Marijuana, LSD, Cocaine';
 		    $calories = 9001;
 		    $fat = 10;
 		    $saturated = 1;
