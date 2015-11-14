@@ -42,22 +42,22 @@
 		    @$dom->loadHTMLFile($url);
 
 		    $name = 'Test';
-		    $serving = 100;
+		    $serving = 0;
 		    $vegetarian = 0;
 		    $ingredients = 'Marijuana, LSD, Cocaine';
-		    $calories = 9001;
-		    $fat = 10;
-		    $saturated = 1;
-		    $cholestrol = 5;
-		    $sodium = 3;
-		    $carbohydrate = 2;
-		    $fibre = 6;
-		    $sugars = 37;
-		    $protein = 200;
-		    $vitaminA = 69;
-		    $vitaminC = 42;
-		    $calcium = 11;
-		    $iron = 35;
+		    $calories = 0;
+		    $fat = 0;
+		    $saturated = 0;
+		    $cholestrol = 0;
+		    $sodium = 0;
+		    $carbohydrate = 0;
+		    $fibre = 0;
+		    $sugars = 0;
+		    $protein = 0;
+		    $vitaminA = 0;
+		    $vitaminC = 0;
+		    $calcium = 0;
+		    $iron = 0;
 
 		    //Get nutrition information from document
 		    $i = 0; //Ghetto counter
