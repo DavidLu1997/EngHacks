@@ -113,10 +113,10 @@
 		    	echo $cur . "<br>";
 		    	if($cur){
 		    		switch($i) {
-		    			case 0:
+		    			case 0://fat %
 		    				$serving = $cur;
 		    				break;
-		    			case 1://fat %
+		    			case 1:
 		    				
 		    				break;
 		    			case 2://sat %
@@ -133,16 +133,16 @@
 		    				break;
 		    			case 6:
 		    				$vitaminA = $cur;
-		    			break;
+		    				break;
 		    			case 7:
 		    				$vitaminC = $cur;
-		    			break;
+		    				break;
 		    			case 8:
 		    				$calcium = $cur;
-		    			break;
+		    				break;
 		    			case 9:
 		    				$iron = $cur;
-		    			break;
+		    				break;
 		    		}
 		    		$i++;
 		    	}
