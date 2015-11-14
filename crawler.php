@@ -86,12 +86,15 @@
 		    				$sodium = $cur;
 		    				break;
 		    			case 5:
-		    				$fibre = $cur;
+		    				$carbohydrate = $cur;
 		    				break;
 		    			case 6:
-		    				$sugars = $cur;
+		    				$fibre = $cur;
 		    				break;
 		    			case 7:
+		    				$sugars = $cur;
+		    				break;
+		    			case 8:
 		    				$protein = $cur;
 		    				break;
 		    		}
