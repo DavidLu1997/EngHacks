@@ -22,9 +22,9 @@
 		//Min and Max IDs for foods
 		$min_id = 1000;
 		$max_id = 1002;
-		function crawl_page($url, $id)
+		function crawl_page($url, $id, $conn)
 		{
-			echo "Crawling:" . $url . "<br>";
+			echo "Crawling: " . $url . "<br>";
 		    $seen[$url] = true;
 
 		    $dom = new DOMDocument('1.0');
@@ -49,16 +49,16 @@
 		    $iron = 35;
 
 		    $sql = "INSERT INTO food (name, serving, vegetarian, ingredients, calories, fat, saturated, cholestrol, sodium, carbohydrate, fibre, sugars, protein, vitaminA, vitaminC, calcium, iron, id) VALUES ('$name', '$serving', '$vegetarian', '$ingredients', '$calories', '$fat', '$saturated', '$cholestrol', '$sodium', '$carbohydrate', '$fibre', '$sugars', '$protein', '$vitaminA', '$vitaminC', '$calcium', '$iron', '$id');";
-			echo "Querying DB with:" . $sql . "<br>";
+			echo "Querying DB with: " . $sql . "<br>";
 			if($conn->query($sql) === TRUE) {
-				echo "Query sucessful, URL:". $url . " crawled.<br>";
+				echo "Query sucessful, URL: ". $url . " crawled.<br>";
 			} else {
 				echo "Error: " . $sql . "<br>" .$conn->error;
 			}
 		}
 
 		for($x = $min_id; $x <= $max_id; $x++) {
-			crawl_page("https://uwaterloo.ca/food-services/menu/product/" . $x, $x);
+			crawl_page("https://uwaterloo.ca/food-services/menu/product/" . $x, $x, $conn);
 		}
 	?>
 </body>
