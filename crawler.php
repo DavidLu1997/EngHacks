@@ -68,7 +68,7 @@
 		    	str_replace('+', '', $cur);
 		    	$cur = max(-1, filter_var($item->nodeValue, FILTER_SANITIZE_NUMBER_INT));
 		    	echo $cur . "<br>";
-		    	if($cur != -1){
+		    	if($cur > -1){
 		    		switch($i) {
 		    			case 0:
 		    				$calories = $cur;
