@@ -32,7 +32,7 @@
 
 		//Min and Max IDs for foods
 		$min_id = 1000;
-		$max_id = 1001;
+		$max_id = 2711;
 		function crawl_page($url, $id, $conn)
 		{
 			echo "Crawling: " . $url . "<br>";
@@ -178,7 +178,7 @@
 		    $vegetarian = $vegetarian == "Vegetarian";
 
 		    $sql = "INSERT INTO food (name, serving, vegetarian, ingredients, calories, fat, saturated, cholestrol, sodium, carbohydrate, fibre, sugars, protein, vitaminA, vitaminC, calcium, iron, id) VALUES ('$name', '$serving', '$vegetarian', '$ingredients', '$calories', '$fat', '$saturated', '$cholestrol', '$sodium', '$carbohydrate', '$fibre', '$sugars', '$protein', '$vitaminA', '$vitaminC', '$calcium', '$iron', '$id');";
-			echo "Querying DB with: " . $sql . "<br>";
+			//echo "Querying DB with: " . $sql . "<br>";
 			if($conn->query($sql) === TRUE) {
 				echo "Query sucessful, URL: ". $url . " crawled.<br>";
 			} else {
