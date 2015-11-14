@@ -56,7 +56,7 @@
 		}
 
 		for($x = $min_id; $x <= $max_id; $x++) {
-			crawl_page("https://uwaterloo.ca/food-services/menu/product/" . $x, $id);
+			crawl_page("https://uwaterloo.ca/food-services/menu/product/" . $x, $x);
 		}
 	?>
 </body>
