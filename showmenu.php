@@ -20,10 +20,10 @@
 		echo "Connected suessfully.<br>";
 
 		echo "Weekly menu: <br>";
-		$ids = $conn->query("SELECT * FROM menu");
+		$ids = $conn->query("SELECT * FROM menu;");
 
 		foreach($ids as $id) {
-			$item = $conn->query("SELECT * FROM food WHERE id = $id");
+			$item = $conn->query("SELECT * FROM food WHERE id = $id;");
 			echo $item . "<br>";
 		}
 	?>
