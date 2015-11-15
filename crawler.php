@@ -6,6 +6,7 @@
 
 <body>
 	<?php
+	//Disable timeout
 	set_time_limit(0);
 		/*
 			WatChew Database Crawler
@@ -41,7 +42,7 @@
 
 		//Min and Max IDs for foods
 		$min_id = 0;
-		$max_id = 10000;
+		$max_id = 4000;
 		function crawl_page($url, $id, $conn)
 		{
 			//echo "Crawling: " . $url . "<br>";
@@ -222,7 +223,7 @@
 		//Display complete message
 		echo "Crawl complete, " . ($max_id - $min_id + 1) . " entries crawled.<br>";
 		echo "Have a nice day!<br>";
-		echo "<img src='surprise.jpg'>";
+		echo "<img src='surprise.jpg width='600px' height='900px'>";
 	?>
 </body>
 
