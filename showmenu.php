@@ -24,10 +24,10 @@
 
 		while($id = $ids->fetch_assoc()){
 			$id = $id['id'];
-			echo $id . "<br>";
+			//echo $id . "<br>";
 			$item = $conn->query("SELECT * FROM food WHERE id = $id;");
 			while($it = $item->fetch_assoc()){
-				echo $it['name'] . "<br>";
+				echo $it['name'] . " - " . $id['calories'] . " calories per serving<br>";
 			}
 			
 		}
