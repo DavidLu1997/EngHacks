@@ -3,28 +3,16 @@
 	$password = $_POST["password"];
 	$email = $_POST["email"];
 
-	if($conn->query("SELECT * FROM users WHERE email = ?
-	AND password = ? ") === TRUE){
-		echo "Succcess";
-	} else {
-		echo "Sum Ting Wong<br>";
-	}
-
-	mysqli_stmt_bind_param($statement, "ss", $email, $password);
-	mysqli_stmt_execute($statement);
-	mysqli_stmt_store_result($statement);
-	mysqli_stmt_bind_result($statement, $name, $email, $password);
+	$rows = $conn->query("SELECT * FROM users WHERE email = '$email' AND password = '$password'");
 
 	$user = array();
-	while(mysqli_stmt_fetch($statement)){
-		$user[name] = $name;
-		$user[email] = $email;
-		$user[password] = $password;
+	while($row = $rows->fetch_assoc()) {
+		$user[name] = $row['name'];
+		$user[email] = $row['email'];
+		$user[password] = $row['password'];
 	}
 
 	echo json_encode($user);
-	mysqli_stmt_close($statement);
-	
 	mysqli_close($conn);
 
 ?>
