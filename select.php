@@ -13,6 +13,9 @@
 		
 		$name = $_POST["search_string"];
 
+		//Trim
+		$name = trim($name);
+
 		$r = $conn->query("SELECT * FROM food WHERE name LIKE " . "'%" . $name . "%';");
 
 		$flag = array();
