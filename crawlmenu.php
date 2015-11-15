@@ -17,7 +17,9 @@
 		if($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 		}
-		//echo "Connected suessfully.<br>";
+		echo "Connected suessfully.<br>";
+
+		$counter = 0;
 
 		//Clear DB
 		$clearDB = 1;
@@ -54,12 +56,15 @@
 				} else {
 					echo "Error: " . $sql . "<br>" .$conn->error;
 				}
+
+				$counter++;
 			}
+			
 		}
 		crawl_page("https://uwaterloo.ca/food-services/menu" . $x, $conn);
 
 		$conn->close();
-		echo "Crawl complete, " . ($max_id - $min_id) + 1 . " entries crawled.<br>";
+		echo "Crawl complete, " . $counter . " entries crawled.<br>";
 		echo "Have a nice day!<br>";
 		echo "<img src='surprise.jpg'>";
 	?>
