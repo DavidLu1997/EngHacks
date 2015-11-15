@@ -44,9 +44,9 @@
 		    //Get nutrition information from document
 		    $links= $dom->getElementsByTagName('a');
 		    foreach($links as $item) {
-		    	$cur = $item->getAttribute('src');
+		    	$cur = $item->getAttribute('href');
 
-		    	if(strpos($cur, "https://uwaterloo.ca/food-services/menu/product/") != FALSE){
+		    	if(strpos($cur, "/food-services/menu/product/") != FALSE){
 		    		$cur = filter_var($cur, FILTER_SANITIZE_NUMBER_INT);
 
 		    		$sql = "INSERT INTO menu (id) VALUES ('$cur');";
