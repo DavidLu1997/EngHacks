@@ -19,7 +19,6 @@
 		$row = $r->fetch_assoc();
 		$flag[0] = $row['name'];
 		$flag[1] = $row['serving'];
-		$flag[2] = $row['vegetarian'];
 		$flag[3] = $row['ingredients'];
 		$flag[4] = $row['calories'];
 		$flag[5] = $row['fat'];
