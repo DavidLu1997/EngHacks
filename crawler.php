@@ -100,6 +100,8 @@
 		    		}
 		    		$i++;
 		    	}
+		    	if($calories === 0)
+		    		return;
 		    }
 
 		    //Get minerals
@@ -198,6 +200,7 @@
 				//echo "Error: " . $sql . "<br>" .$conn->error;
 		}
 
+		$conn->close();
 		echo "Crawl complete, " . $max_id - $min_id + 1 . " entries crawled.<br>";
 		echo "Have a nice day!<br>";
 		echo "<img src='taylor-swift.jpg'>";
