@@ -45,10 +45,9 @@
 		    $links= $dom->getElementsByTagName('a');
 		    foreach($links as $item) {
 		    	$cur = $item->getAttribute('href');
-		    	echo $cur . "<br>";
 
-		    	if(strpos($cur, "/food-services/menu/product/") != FALSE){
-		    		$cur = filter_var($cur, FILTER_SANITIZE_NUMBER_INT);
+		    	if(strpos($cur, "product") != FALSE){
+		    		$cur = abs(filter_var($cur, FILTER_SANITIZE_NUMBER_INT));
 
 		    		$sql = "INSERT INTO menu (id) VALUES ('$cur');";
 					echo "Querying DB with: " . $sql . "<br>";
