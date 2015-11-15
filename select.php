@@ -11,14 +11,15 @@
 			die("Connection failed: " . $conn->connect_error);
 		}
 		
-		$name = $_REQUEST['name'];
+		$name = $_POST["search_string"];
 
 		$r = $conn->query("SELECT * FROM food WHERE name LIKE " . "'%" . $name . "%';");
 
-		while($row = mysql_fetch_arry($r)) {
-			$flag[id] = $row[id];
+		$flag = array();
+		while($row = $r->fetch_assoc()) {
+			$flag[id] = $row['id'];
 		}
 
-		print(json_encode($flag));
+		echo json_encode($flag);
 		$conn->close();
 ?>
