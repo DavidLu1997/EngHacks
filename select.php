@@ -16,8 +16,10 @@
 		$r = $conn->query("SELECT * FROM food WHERE name LIKE " . "'%" . $name . "%';");
 
 		$flag = array();
+		$i = 0;
 		while($row = $r->fetch_assoc()) {
-			$flag[id] = $row['id'];
+			$flag[$i] = $row['id'];
+			$i++;
 		}
 
 		echo json_encode($flag);
