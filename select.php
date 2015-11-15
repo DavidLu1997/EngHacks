@@ -15,5 +15,10 @@
 
 		$r = $conn->query("SELECT * FROM food WHERE name LIKE $name");
 
-		while()
+		while($row = mysql_fetch_arry($r)) {
+			$flag[id] = $row[id];
+		}
+
+		print(json_encode($flag));
+		$conn->close();
 ?>
