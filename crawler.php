@@ -192,7 +192,7 @@
 			if($conn->query($sql) === TRUE) {
 				//echo "Query sucessful, URL: ". $url . " crawled.<br>";
 			} else {
-				//echo "Error: " . $sql . "<br>" .$conn->error;
+				//echo "Error: " . $sql . "<br>" . $conn->error;
 			}
 		}
 
@@ -206,6 +206,14 @@
 				//echo "Removed null entries.<br>";
 		} else {
 				//echo "Error: " . $sql . "<br>" .$conn->error;
+		}
+
+		//Sort database by name
+		$sql = "SELECT * FROM food ORDER BY name";
+		if($conn->query($sql) === TRUE) {
+			//echo "Sorted database.<br>";
+		} else {
+			//echo "Error: " . $sql . "<br>" . $conn->error;
 		}
 
 		$conn->close();
