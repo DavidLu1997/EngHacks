@@ -6,6 +6,13 @@
 
 <body>
 	<?php
+		/*
+			WatChew Database Crawler
+			Written by David Lu
+			14/11/2015
+			Crawls the UW Food Services website to obtain the current week's menu
+		*/
+
 		//MySQL
 		$servername = "localhost";
 		$username = "watchew";

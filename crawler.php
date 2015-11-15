@@ -6,18 +6,26 @@
 
 <body>
 	<?php
-		//MySQL
+		/*
+			WatChew Database Crawler
+			Written by David Lu
+			14/11/2015
+			Crawls the UW Food Services website to obtain nutritional information for all menu items
+		*/
+		//MySQL connection
 		$servername = "localhost";
 		$username = "watchew";
 		$password = "enghacks";
 		$dbname = "nutrition";
 
+		//Connect
 		$conn = new mysqli($servername, $username, $password, $dbname);
 
+		//Checks for connection
 		if($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 		}
-		//echo "Connected suessfully.<br>";
+		echo "Connected sucessfully.<br>";
 
 		//Clear DB
 		$clearDB = 1;
@@ -32,15 +40,17 @@
 
 		//Min and Max IDs for foods
 		$min_id = 0;
-		$max_id = 4000;
+		$max_id = 10000;
 		function crawl_page($url, $id, $conn)
 		{
 			//echo "Crawling: " . $url . "<br>";
 		    $seen[$url] = true;
 
+		    //Load HTML file using DOM
 		    $dom = new DOMDocument('1.0');
 		    @$dom->loadHTMLFile($url);
 
+		    //Initialize variables
 		    $name = 'NAME';
 		    $serving = 0;
 		    $vegetarian = 0;
@@ -199,6 +209,8 @@
 		}
 
 		$conn->close();
+
+		//Display complete message
 		echo "Crawl complete, " . ($max_id - $min_id + 1) . " entries crawled.<br>";
 		echo "Have a nice day!<br>";
 		echo "<img src='surprise.jpg'>";
