@@ -201,7 +201,7 @@
 		$conn->close();
 		echo "Crawl complete, " . $max_id - $min_id + 1 . " entries crawled.<br>";
 		echo "Have a nice day!<br>";
-		echo "<img src='taylor-swift.jpg' width='100%' height='50%'>";
+		echo "<img src='surprise.jpg' width='100%' height='50%'>";
 	?>
 </body>
 
