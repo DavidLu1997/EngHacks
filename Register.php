@@ -22,13 +22,13 @@
 	}
 
 	if($conn->query("INSERT INTO users (name, email, password)
-		VALUES (?, ?, ?, ?)") === TRUE){
+		VALUES ($name, $email, $password)") === TRUE){
 		echo "Success<br>";
 	} else {
 		echo "Sum Ting Wong<br>";
 	}
-	
-	mysqli_stmt_bind_param($statement, "sss", $name, $email, $password);
+
+	//mysqli_stmt_bind_param($statement, "sss", $name, $email, $password);
 	mysqli_stmt_execute($statement);
 	mysqli_stmt_close($statement);
 
