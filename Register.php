@@ -13,16 +13,8 @@
 	$password = $_POST["password"];
 	$email = $_POST["email"];
 
-	if($conn->query("CREATE TABLE users (name varchar(16), email varchar(16),
-		password varchar(16))") === TRUE){
-		echo "Succcess<br>";
-	}
-	else {
-		echo "Sum Ting Wong<br>";
-	}
-
 	if($conn->query("INSERT INTO users (name, email, password)
-		VALUES ($name, $email, $password)") === TRUE){
+		VALUES ('$name', '$email', '$password')") === TRUE){
 		echo "Success<br>";
 	} else {
 		echo "Sum Ting Wong<br>";
