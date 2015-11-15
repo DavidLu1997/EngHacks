@@ -19,7 +19,7 @@
 		}
 		echo "Connected suessfully.<br>";
 
-		$counter = 0;
+		
 
 		//Clear DB
 		$clearDB = 1;
@@ -34,6 +34,7 @@
 
 		function crawl_page($url, $conn)
 		{
+			$counter = 0;
 			//echo "Crawling: " . $url . "<br>";
 		    $seen[$url] = true;
 
@@ -59,12 +60,12 @@
 
 				$counter++;
 			}
-			
+			echo "Crawl complete, " . $counter . " entries crawled.<br>";
 		}
 		crawl_page("https://uwaterloo.ca/food-services/menu" . $x, $conn);
 
 		$conn->close();
-		echo "Crawl complete, " . $counter . " entries crawled.<br>";
+
 		echo "Have a nice day!<br>";
 		echo "<img src='surprise.jpg'>";
 	?>
