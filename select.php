@@ -13,7 +13,7 @@
 		
 		$name = $_REQUEST['name'];
 
-		$r = $conn->query("SELECT * FROM food WHERE name LIKE $name");
+		$r = $conn->query("SELECT * FROM food WHERE name LIKE $name;");
 
 		while($row = mysql_fetch_arry($r)) {
 			$flag[id] = $row[id];
