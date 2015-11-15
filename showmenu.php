@@ -17,14 +17,19 @@
 		if($conn->connect_error) {
 			die("Connection failed: " . $conn->connect_error);
 		}
-		echo "Connected suessfully.<br>";
+		echo "Connected sucessfully.<br>";
 
 		echo "Weekly menu: <br>";
 		$ids = $conn->query("SELECT * FROM menu;");
 
-		foreach($ids as $id) {
+		while($id = $ids->fetch_assoc()){
+			$id = $id['id'];
+			echo $id . "<br>";
 			$item = $conn->query("SELECT * FROM food WHERE id = $id;");
-			echo $item . "<br>";
+			while($it = $item->fetch_assoc()){
+				echo $it['name'] . "<br>";
+			}
+			
 		}
 	?>
 </body>
