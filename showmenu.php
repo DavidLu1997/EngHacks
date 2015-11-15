@@ -27,7 +27,7 @@
 			//echo $id . "<br>";
 			$item = $conn->query("SELECT * FROM food WHERE id = $id;");
 			while($it = $item->fetch_assoc()){
-				echo $it['name'] . " - " . (int)$id['calories'] . " calories per serving<br>";
+				echo $it['name'] . " - " . $it['calories'] . " calories per serving<br>";
 			}
 			
 		}
