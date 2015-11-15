@@ -48,17 +48,17 @@
 
 		    	if(strpos($cur, "https://uwaterloo.ca/food-services/menu/product/") != FALSE){
 		    		$cur = filter_var($cur, FILTER_SANITIZE_NUMBER_INT);
+
+		    		$sql = "INSERT INTO menu (id) VALUES ('$cur');";
+					echo "Querying DB with: " . $sql . "<br>";
+					if($conn->query($sql) === TRUE) {
+						echo "Query sucessful, URL: ". $url . " crawled.<br>";
+					} else {
+						echo "Error: " . $sql . "<br>" .$conn->error;
+					}
+
+					$counter++;
 		    	}
-
-			    $sql = "INSERT INTO menu (id) VALUES ('$cur');";
-				echo "Querying DB with: " . $sql . "<br>";
-				if($conn->query($sql) === TRUE) {
-					echo "Query sucessful, URL: ". $url . " crawled.<br>";
-				} else {
-					echo "Error: " . $sql . "<br>" .$conn->error;
-				}
-
-				$counter++;
 			}
 			echo "Crawl complete, " . $counter . " entries crawled.<br>";
 		}
