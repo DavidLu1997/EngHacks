@@ -45,6 +45,7 @@
 		    $links= $dom->getElementsByTagName('a');
 		    foreach($links as $item) {
 		    	$cur = $item->getAttribute('href');
+		    	echo $cur . "<br>";
 
 		    	if(strpos($cur, "/food-services/menu/product/") != FALSE){
 		    		$cur = filter_var($cur, FILTER_SANITIZE_NUMBER_INT);
