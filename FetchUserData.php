@@ -1,4 +1,9 @@
 <?php
+	$servername = "localhost";
+	$username = "watchew";
+	$password = "enghacks";
+	$dbname = "nutrition";
+	
 	$conn = mysqli_connect($servername, $username, $password, $dbname);
 	$password = $_POST["password"];
 	$email = $_POST["email"];
