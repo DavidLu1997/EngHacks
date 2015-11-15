@@ -6,6 +6,7 @@
 
 <body>
 	<?php
+	set_time_limit(0);
 		/*
 			WatChew Database Crawler
 			Written by David Lu
