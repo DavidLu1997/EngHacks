@@ -32,7 +32,7 @@
 
 		//Min and Max IDs for foods
 		$min_id = 0;
-		$max_id = 10000;
+		$max_id = 4000;
 		function crawl_page($url, $id, $conn)
 		{
 			//echo "Crawling: " . $url . "<br>";
@@ -100,8 +100,6 @@
 		    		}
 		    		$i++;
 		    	}
-		    	if($calories === 0)
-		    		return;
 		    }
 
 		    //Get minerals
