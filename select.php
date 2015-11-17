@@ -16,8 +16,10 @@
 		//Trim
 		$name = trim($name);
 
+		//Query for all names matching search_string
 		$r = $conn->query("SELECT * FROM food WHERE name LIKE " . "'%" . $name . "%';");
 
+		//Get list of ids
 		$flag = array();
 		$i = 0;
 		while($row = $r->fetch_assoc()) {
@@ -25,6 +27,7 @@
 			$i++;
 		}
 
+		//Encode to JSON array
 		echo json_encode($flag);
 		$conn->close();
 ?>
