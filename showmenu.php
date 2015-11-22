@@ -6,7 +6,7 @@
 
 <body>
 	<?php
-		//MySQL
+		//Server information
 		$servername = "localhost";
 		$username = "watchew";
 		$password = "enghacks";

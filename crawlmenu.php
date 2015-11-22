@@ -13,7 +13,7 @@
 			Crawls the UW Food Services website to obtain the current week's menu
 		*/
 
-		//MySQL
+		//Server information
 		$servername = "localhost";
 		$username = "watchew";
 		$password = "enghacks";

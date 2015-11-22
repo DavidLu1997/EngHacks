@@ -14,7 +14,7 @@
 			14/11/2015
 			Crawls the UW Food Services website to obtain nutritional information for all menu items
 		*/
-		//MySQL connection
+		//Server information
 		$servername = "localhost";
 		$username = "watchew";
 		$password = "enghacks";
