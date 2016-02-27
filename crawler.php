@@ -223,7 +223,6 @@
 		//Display complete message
 		echo "Crawl complete, " . ($max_id - $min_id + 1) . " entries crawled.<br>";
 		echo "Have a nice day!<br>";
-		echo "<img src='surprise.jpg'>";
 	?>
 </body>
 
